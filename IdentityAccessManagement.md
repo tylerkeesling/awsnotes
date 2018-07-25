@@ -1,14 +1,38 @@
 # Identity Access Management (IAM)
+Managing identity across the AWS cloud
 
-IAM enables one to securely control access to AWS services and resources for your users. <br>
-Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+### What is IAM?
+> IAM allows you to manage users and their level of access to the AWS Console. It is important to understand IAM and how it works, both for the exam and for administrating a company's AWS account in real life.
 
-* Manage IAM users and their access. You can create users in IAM, assign them to individual security credentrials (access keys, passwords, and MFA), or request temp security credentials to provide users access to AWS services and resources. You can manage permissions in order to control which operations a user can perform
-* Manage IAM roles and their permissions. You can create roles in IAM and manage permissions to control which operations can be performed by the entity, or AWS service, that assumes the role. you can also define which entity is allowed to assume the role
-* Manage federated users and their permissions. you can enable identity federation to allow exisiting identities (users, groups, and roles) in your enterprise to access the AWS Management Console, call AWS APIs, and access resources, w/o the need to create an IAM user for each identity
+### Functionality
+AWS IAM allows you to:
+- Manage IAM users and their access
+	- You can create users in IAM
+	- Assign them individual security credentials (access keys, passwords, MFA)
+	- Request temp security credentials to provide users access to AWS services and resources
+	- Manage permissions in order to control which operations a user can perform
 
-## What is IAM?
-> Iam allows you to manage users and their level of access to the AWS Console. It is important to understand IAM and how it works, both for the exam and for administrating a company's AWS account in real life.
+- Manage IAM roles and their permissions
+	- Create roles in IAM and manage permissions to control which operations can be performed by the entity
+	- Define which entity is allowed to assume a role
+	- Use service-linked roles to deletegate permissions to AWS services that create and manage AWS resources on your behalf
+
+- Manage federated (logged on and identified through FB or LinkedIn, etc) and their permissions
+	- Enable identity federation to allow existing identities (users, groups, and roles) to access AWS
+
+### What are Users?
+- Users are *people or resources* who need access to AWS resources
+- They can be:
+	- Privedged admins who need console acces to manage your AWS
+	- End users who need acces to content in AWS
+	- Systems that need privileges to programmatically access data in AWS
+
+### What are Groups
+- A collection of users under one set of permissions
+
+### What are Roles?
+- Roles allow one to delegate access to *users or services* that normally don't have access to AWS resources
+- Users or AWS Services can assume roles based on temporary security credentials
 
 ## What does IAM give you?
 * Centralised control of your AWS account
@@ -22,10 +46,10 @@ Using IAM, you can create and manage AWS users and groups, and use permissions t
 * Supports PCI DSS Compliance
 
 ### Critical Terms:
-* Users - End Users (think people)
-* Groups - A collection of users under one set of permissions
-* Roles - You create roles and can then asign them to AWS resources
-* Policies - A document that defines one or more permissions (JSON)
+* **Users** - End Users (think people)
+* **Groups** - A collection of users under one set of permissions
+* **Roles** - You create roles and can then assign them to AWS resources
+* *Policies* - A document that defines one or more permissions (in JSON)
 	* Sits on top of Users, Groups, and Roles
 
 Root Account is the email address assigned to the account.
@@ -50,7 +74,7 @@ Creating a billing alarm
 
 * IAM is universal. It does not apply to regions.
 * The root account is the account created when first setup your AWS account. It has complete Admin access
-* New ueser have no permissions
+* New users have no permissions
 * New users are assigned Access Key ID & Scret Access keys
 * These are not the same as passwords and cannot use them to Login to the console. It can be used for access in AWS APIs or CLI
 * Only get the credentials once
@@ -59,3 +83,5 @@ Creating a billing alarm
 * Root account has `Administrator Access`
 * `Power User Access` is access to all AWS services except the management of groups and users within IAM
 * You can implement MFA for all accounts
+
+
