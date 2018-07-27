@@ -49,3 +49,37 @@ Enable Geo-Restrictions. You can either whitelist or blacklist countries. You ca
 	- This is called the expiration period
 - Cache control headers determine how frequently it needs to check the origin for an updated version
 - 0 sec expiration dates will revalidate every request with the origin server
+
+---
+
+## Lab
+- Two types of distributions
+	- Web
+		- For basically anything html, css, php, images, etc
+		- Use HTTP or HTTPS
+		- Add, update, delete, or submit data
+		- Live streaming
+	- RTMP
+		- Adobe Flash Media Servers RTMP protocol
+- TTL
+	- **T**ime **T**o **L**ive
+		- Always in seconds
+		- How long are your objects going to exist in the Edge Locations
+		- Min 0 secs, Max 365 days
+		- Default 24 hrs (86400 s)
+	- Restrict Bucket Access
+		- Restrict user from accessing S3 bucket
+		- Must use CloudFront URL
+	- Default Cache Behavior Settings
+		- Viewer Protocol Policy
+			- Choose Redirect HTTP to HTTPS
+- Restrict Viewer Access
+	- Use Signed URLs or Signed Cookies
+	- Can prevent users from getting your content unless they are authorized
+- AWS WAF
+	- Web Access Firewall
+	- prevent Script Kiddies
+	- Prevents any submits that don't meet your criteria
+- Restrictions
+	- Whitelist geo
+	- Blacklist geo
