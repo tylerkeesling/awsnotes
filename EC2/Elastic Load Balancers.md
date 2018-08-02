@@ -1,5 +1,5 @@
 # Elastic Load Balancers
-Balances a load around to various web servers
+Elastic Load Balacin automatically distributes incoming application traffic across multiple Amazon EC2 instances. It enablese you to achieve greater levels of fault tolerance in your applications, seamlessly provinding the required amount of load balancing capacity needed to distribute application traffic.
 
 ## The three types of ELB's
 1. `Application Load Balancers`
@@ -37,7 +37,15 @@ Balances a load around to various web servers
 	- `Application LB`
 	- `Network LB`
 	- `Classic LB`
-- `504 Error` means the g*ateway has timed out*
-	- The app is not repsonding within the idle timeout period
+- `504 Error` means the *gateway has timed out*
+	- The app is not responding within the idle timeout period
 	- Troubleshoot -> *is it Web Server or Database*?
-- *If you need IPv4 address* of end user, look for `X-Forward-For header`
+- *If you need IPv4 address* of end user, look for `X-Forwarded-For header`
+
+## ELB Lab Notes
+- Instances monitored by ELB are reported as:
+	- InService, or
+	- OutOfService
+- Health Checks check the instance health by talking to it
+- ELB's have their own DNS name. You are never given an IP address
+- Read the ELB FAQ for Classic Load Balancers
