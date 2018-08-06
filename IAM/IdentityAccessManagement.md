@@ -59,9 +59,6 @@ Two types of access:
 	1. For like storing
 2. AWS Management Console Access
 
-ACCESS KEY JbPzl9CAZBkhXXnKL+NfHYaUJrZUgF6GyXIn1Mr0
-PW 9E9ZoSZhLWR]
-
 What is a IAM role?
 * Roles are a secure way to grant permissions to entities that you trust
 * UAN yser ub abitger account
